@@ -1,0 +1,12 @@
+# 1. Base requirements
+-r requirements-base.txt
+
+# 2. Mamba Architecture (Requires CUDA)
+causal-conv1d>=1.2.0
+mamba-ssm>=1.1.1
+
+# 3. NVIDIA Quantum & QPU Backend
+cuda-quantum
+# QuREKA IonQ 연동을 위한 PennyLane 플러그인 (QuREKA 지원 스펙에 따라 선택)
+pennylane-ionq 
+# 또는 amazon-braket-pennylane-plugin
