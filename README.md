@@ -6,12 +6,35 @@
 ---
 ## ToDO
 ### 1. 실제 벤치마킹용 유전자 발현량 데이터 연동
-### 2. 온톨로지용 그래프 데이터베이스 구축
+### 2. ~~온톨로지용 그래프 데이터베이스 구축~~
 ### 3. QuREKA 시험
 ### 4. 한강 6호기 GPU 5구좌 하이브리드 병렬처리 전략 도출
 ### 5. phase 2, 3 코드 작성
 ---
-
+## Doing
+---
+## Done
+### 온톨로지용 그래프 데이터베이스 구축: Neo4j 설치
+### 포트포워딩: ssh -L 7474:localhost:7474 -L 7687:localhost:7687 [계정]@[IBS-Yonsei]
+### 1. Gene Ontology 다운로드 (https://geneontology.org/docs/download-ontology/) 
+### 2. Import to Neo4j (https://neo4j.com/labs/rdflib-neo4j/)
+### 3. Neo4j Ontology 설정:
+```cypher
+CREATE CONSTRAINT resource_uri_unique IF NOT EXISTS
+FOR (r:Resource) REQUIRE r.uri IS UNIQUE;
+```
+### 4. 확인
+```cypher
+SHOW CONSTRAINTS;
+```
+### 5. Python code 작성: /neo4j/bpark.ipynb
+```python
+# go.owl 안에 모든 네임스페이스 출력 
+# 네임스페이스를 짧게 바꾸고 서버에 저장
+# Neo4j에는 251,505개의 노드와 475,126개의 관계 모두 들어 감.
+```
+### 6. http://localhost:7474 접속 확인 (포트포워딩 먼저 해줘야 함)
+---
 ## 🚀 Environment Setup Guide (환경 설정 가이드)
 
 본 프로젝트는 하드웨어 환경(CUDA 지원 여부)에 따라 투트랙(Two-track)으로 코드를 실행합니다. 
