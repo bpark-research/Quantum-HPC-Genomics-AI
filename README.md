@@ -14,7 +14,7 @@
 ## Doing
 ---
 ## Done
-### 온톨로지용 그래프 데이터베이스 구축: Neo4j 설치
+### 온톨로지용 그래프 데이터베이스 (RDF Knowledge Database) 구축: Neo4j 설치
 ### 포트포워딩: ssh -L 7474:localhost:7474 -L 7687:localhost:7687 [계정]@[IBS-Yonsei]
 ### 1. Gene Ontology 다운로드 (https://geneontology.org/docs/download-ontology/) 
 ### 2. Import to Neo4j (https://neo4j.com/labs/rdflib-neo4j/)
